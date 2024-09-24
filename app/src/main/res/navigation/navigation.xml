@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/jsonFragment">
+
+    <fragment
+        android:id="@+id/jsonFragment"
+        android:name="com.example.assignment8.json.JsonFragment"
+        android:label="JsonFragment" >
+        <action
+            android:id="@+id/action_jsonFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.assignment8.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="character"
+            app:argType="com.example.assignment8.network.CharactersDetail" />
+        <action
+            android:id="@+id/action_detailFragment_to_jsonFragment"
+            app:destination="@id/jsonFragment" />
+    </fragment>
+</navigation>
